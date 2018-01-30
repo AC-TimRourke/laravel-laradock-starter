@@ -44,18 +44,16 @@ cd laradock
 ```
 
 9. Spin up your docker environment (take note of the container name of the "workspace" container that it starts!)
-
+  - Note: If you would prefer to see the stdout and stderr printed to your terminal, you may omit the `-d` flag.
 
 ```bash
 docker-compose up -d workspace nginx mysql redis
 ```
 
 10. Drop into your "workspace" container's terminal
-    * Note: your workspace container's name may not be "laradock_workspace_1". If it isn't use the container name 
-            found in the previous step 
 
 ```bash
-docker exec -ti laradock_workspace_1 bash
+docker-compose exec workspace bash
 ```
 
 11. Run `composer install` to install the PHP dependencies for this project
